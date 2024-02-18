@@ -5,6 +5,10 @@ import (
 )
 
 func main() {
+	linkedListDemo()
+}
+
+func linkedListDemo() {
 	q := linkedlist.CreateNode(1)
 	n := linkedlist.CreateNode(2)
 	m := linkedlist.CreateNode(3)
@@ -17,11 +21,13 @@ func main() {
 	firstList.Add(o)
 	firstList.Add(p)
 	firstList.Show()
-	firstList.Remove(3)
-	firstList.Show()
-	firstList.Search(3)
-	firstList.AddAtStart(0)
-	firstList.Show()
-	firstList.RemoveAtStart()
+
+	secondList := linkedlist.LinkedList[int]{}
+	secondList.Add(linkedlist.CreateNode[int](10))
+	secondList.Add(linkedlist.CreateNode[int](20))
+
+	secondList.AppendAtStart(&firstList)
+	secondList.Show()
+	firstList.AppendAtStart(&linkedlist.LinkedList[int]{})
 	firstList.Show()
 }
