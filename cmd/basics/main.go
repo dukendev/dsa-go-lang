@@ -26,8 +26,6 @@ func linkedListDemo() {
 	secondList.Add(linkedlist.CreateNode[int](10))
 	secondList.Add(linkedlist.CreateNode[int](20))
 
-	secondList.AppendAtStart(&firstList)
+	secondList.AppendAtEnd(&firstList)
 	secondList.Show()
-	firstList.AppendAtStart(&linkedlist.LinkedList[int]{})
-	firstList.Show()
 }

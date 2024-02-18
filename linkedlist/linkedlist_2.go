@@ -1,6 +1,5 @@
 package linkedlist
 
-// todo : add list At start
 func (l *LinkedList[T]) AppendAtStart(list *LinkedList[T]) {
 	if l == nil || list == nil || list.head == nil {
 		return
@@ -13,7 +12,17 @@ func (l *LinkedList[T]) AppendAtStart(list *LinkedList[T]) {
 	l.head = list.head
 }
 
-//todo : add list At end
+// todo : add list At end
+func (l *LinkedList[T]) AppendAtEnd(list *LinkedList[T]) {
+	if list == nil || list.head == nil {
+		return
+	}
+	cur := l.head
+	for cur.next != nil {
+		cur = cur.next
+	}
+	cur.next = list.head
+}
 
 //todo : reverse list
 
