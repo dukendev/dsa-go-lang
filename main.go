@@ -8,7 +8,13 @@ import (
 )
 
 func main() {
-	linearSearchDemo()
+	binarySearchDemo()
+}
+
+func binarySearchDemo() {
+	list := []int{1, 2, 3, 4, 5}
+	r := algorithms.BinarySearch(list, 6)
+	fmt.Print(r)
 }
 
 func linearSearchDemo() {
