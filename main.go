@@ -1,11 +1,20 @@
 package main
 
 import (
+	"fmt"
+
+	"com.github/dukendev/basics/algorithms"
 	"com.github/dukendev/basics/linkedlist"
 )
 
 func main() {
-	linkedListDemo()
+	binarySearchDemo()
+}
+
+func binarySearchDemo() {
+	list := []int{1, 2, 3, 4, 5}
+	r := algorithms.BinarySearch(list, 3)
+	fmt.Print(r)
 }
 
 func linkedListDemo() {
