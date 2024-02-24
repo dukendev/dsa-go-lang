@@ -30,3 +30,22 @@ func BinarySearch(list []int, key int) bool {
 
 	return false
 }
+
+func BinarySearchRec(list []int, key int) bool {
+	return binarySearch(list, key, 0, len(list)-1)
+}
+
+func binarySearch(list []int, key int, s int, e int) bool {
+	if s > e {
+		return false
+	}
+	m := s + (e-s)/2
+	switch {
+	case list[m] > key:
+		return binarySearch(list, key, s, m-1)
+	case list[m] < key:
+		return binarySearch(list, key, m+1, e)
+	default:
+		return true
+	}
+}

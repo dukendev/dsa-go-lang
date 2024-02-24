@@ -1,9 +1,8 @@
 package algorithms_test
 
 import (
-	"testing"
-
 	"com.github/dukendev/basics/algorithms"
+	"testing"
 )
 
 func TestLinearSearch(t *testing.T) {
@@ -20,6 +19,17 @@ func TestLinearSearch(t *testing.T) {
 func TestBinarySearch(t *testing.T) {
 	list := []int{1, 2, 3, 4, 5}
 	res := algorithms.BinarySearch(list, 3)
+	expect := true
+	if res != expect {
+		t.Errorf("expected %t but found %t", expect, res)
+	} else {
+		t.Log("TestBinarySearch passed")
+	}
+}
+
+func TestBinarySearchRec(t *testing.T) {
+	list := []int{1, 2, 3, 4, 5}
+	res := algorithms.BinarySearchRec(list, 1)
 	expect := true
 	if res != expect {
 		t.Errorf("expected %t but found %t", expect, res)
