@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
-
 	"com.github/dukendev/basics/algorithms"
 )
 
 func main() {
-	l := []int{2, 3, 4, 5, 7}
-	fmt.Print(algorithms.BinarySearchRec(l, 6))
+	l := []int{12, 13, 4, 9, 7}
+	algorithms.Print(l)
+	algorithms.BubbleSort(l)
+	algorithms.Print(l)
 }
