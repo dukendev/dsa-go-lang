@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	l := []int{12, 13, 4, 9, 7}
+	l := []int{3, 6, 1, 7, 8, 4}
 	algorithms.Print(l)
-	algorithms.InsertionSort(l)
+	algorithms.BubbleSort(l)
 	algorithms.Print(l)
 }
