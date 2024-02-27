@@ -19,6 +19,19 @@ func BubbleSort(list []int) {
 	}
 }
 
+func SelectionSort(list []int) {
+	n := len(list)
+	for i := 0; i < n-1; i++ {
+		k := i
+		for j := i; j < n; j++ {
+			if list[j] < list[k] {
+				k = j
+				list[i], list[k] = list[k], list[i]
+			}
+		}
+	}
+}
+
 func InsertionSort(list []int) {
 	for i := 1; i < len(list); i++ {
 		current := list[i]
