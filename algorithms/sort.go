@@ -1,6 +1,8 @@
 package algorithms
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func BubbleSort(list []int) {
 	n := len(list)
@@ -42,6 +44,29 @@ func InsertionSort(list []int) {
 		}
 		list[j+1] = current
 	}
+}
+
+func QuickSort(list []int) {
+	if len(list) <= 1 {
+		return
+	}
+	pivot := PartitionAlgo(list, 0, len(list)-1)
+	QuickSort(list[0:pivot])
+	QuickSort(list[pivot+1:])
+}
+
+func PartitionAlgo(list []int, low int, high int) int {
+	pivot := list[high]
+	i := low - 1
+	for j := low; j < high; j++ {
+		if list[j] <= pivot {
+			i++
+			list[i], list[j] = list[j], list[i]
+		}
+	}
+
+	list[i+1], list[high] = list[high], list[i+1]
+	return i + 1
 }
 
 func Print(list []int) {
