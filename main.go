@@ -7,6 +7,6 @@ import (
 func main() {
 	l := []int{3, 6, 1, 7, 8, 4}
 	algorithms.Print(l)
-	algorithms.QuickSort(l)
+	l = algorithms.MergeSort(l)
 	algorithms.Print(l)
 }

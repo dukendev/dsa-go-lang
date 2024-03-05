@@ -75,3 +75,49 @@ func Print(list []int) {
 		fmt.Print(i, " ")
 	}
 }
+
+func MergeSort(list []int) []int {
+	if len(list) <= 1 {
+		return list
+	}
+	mid := len(list) / 2
+
+	left := MergeSort(list[:mid])
+	right := MergeSort(list[mid:])
+	return MergeLists(left, right)
+}
+
+func MergeLists(a []int, b []int) []int {
+	i := 0
+	j := 0
+	n := len(a)
+	m := len(b)
+	aux := make([]int, n+m)
+	k := 0
+	for i < n && j < m {
+		if a[i] <= b[j] {
+			aux[k] = a[i]
+			i++
+			k++
+		} else {
+			aux[k] = b[j]
+			j++
+			k++
+		}
+	}
+
+	for i < n {
+		aux[k] = a[i]
+		i++
+		k++
+	}
+
+	for j < m {
+		aux[k] = b[j]
+		j++
+		k++
+	}
+
+	return aux
+
+}
