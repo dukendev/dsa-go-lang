@@ -13,4 +13,5 @@ func main() {
 	algorithms.Print(l)
 	chars := []byte{'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'e', 'e'}
 	fmt.Print(problems.Compress(chars))
+	fmt.Println(problems.TwoSum([]int{2, 7, 11, 15}, 18))
 }
