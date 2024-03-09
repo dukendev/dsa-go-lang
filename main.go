@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
-
 	"com.github/dukendev/basics/algorithms"
 	"com.github/dukendev/basics/problems"
+	"fmt"
 )
 
 func main() {
