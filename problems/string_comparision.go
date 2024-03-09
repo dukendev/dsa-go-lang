@@ -1,28 +1,48 @@
 package problems
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func Compress(chars []byte) int {
-	fmt.Println()
-	count := 0
-	compressed := ""
-	var previous byte
-	for i := range chars {
-		if count > 0 {
-			if previous != chars[i] {
-
-				count++
-				compressed += fmt.Sprint(count)
-				count = 0
-			}
-		} else {
-			compressed += string(chars[i])
+	write := 0
+	count := 1
+	n := len(chars)
+	for read := 1; read < n; read++ {
+		if chars[read] == chars[read-1] {
 			count++
+		} else {
+			chars[write] = chars[read-1]
+			write++
+			if count > 1 {
+				countStr := []byte(strconv.Itoa(count))
+				for _, c := range countStr {
+					chars[write] = byte(c)
+					write++
+				}
+			}
+			count = 1
 		}
-
-		previous = chars[i]
 	}
-	fmt.Print(compressed)
-	fmt.Println()
-	return len(compressed)
+
+	chars[write] = chars[n-1]
+	write++
+	if count > 1 {
+		countStr := []byte(strconv.Itoa(count))
+		for _, c := range countStr {
+			chars[write] = byte(c)
+			write++
+		}
+	}
+	printByteArray(chars, write)
+	return write
+}
+
+func printByteArray(chars []byte, length int) {
+	var result string
+	for i := 0; i < length; i++ {
+		result += string(chars[i])
+	}
+	fmt.Println(result)
 }
