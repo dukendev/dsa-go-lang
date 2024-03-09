@@ -12,7 +12,5 @@ func main() {
 	l = algorithms.MergeSort(l)
 	algorithms.Print(l)
 	chars := []byte{'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'e', 'e'}
-	chars2 := []byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}
 	fmt.Print(problems.Compress(chars))
-	fmt.Print(problems.Compress(chars2))
 }
