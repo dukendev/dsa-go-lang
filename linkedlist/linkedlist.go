@@ -1,8 +1,11 @@
 package linkedlist
 
-import "fmt"
+import (
+	"com.github/dukendev/basics/common"
+	"fmt"
+)
 
-type LinkedList[T Data] struct {
+type LinkedList[T common.Data] struct {
 	head *Node[T]
 	size int
 }

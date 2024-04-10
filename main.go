@@ -3,6 +3,7 @@ package main
 import (
 	"com.github/dukendev/basics/algorithms"
 	"com.github/dukendev/basics/problems"
+	"com.github/dukendev/basics/queue"
 	"fmt"
 )
 
@@ -14,4 +15,11 @@ func main() {
 	chars := []byte{'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'e', 'e'}
 	fmt.Print(problems.Compress(chars))
 	fmt.Println(problems.TwoSum([]int{2, 7, 11, 15}, 18))
+	queue := queue.Queue[int]{}
+	queue.Enqueue(1)
+	queue.Enqueue(2)
+	queue.Enqueue(3)
+	x := queue.Dequeue()
+	fmt.Println(*x)
+	queue.Show()
 }
